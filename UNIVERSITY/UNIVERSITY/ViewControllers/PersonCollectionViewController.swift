@@ -14,10 +14,12 @@ class PersonCollectionViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		//start
 		PersonDataSource.shared.getPerson {
 			self.collectionView.reloadData()
+			//finish
 		}
+		
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +33,6 @@ class PersonCollectionViewController: UIViewController {
 extension PersonCollectionViewController: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		//		return storage.students.count
 		return PersonDataSource.shared.persons.count
 	}
 	
