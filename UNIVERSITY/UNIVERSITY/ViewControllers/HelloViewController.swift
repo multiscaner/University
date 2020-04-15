@@ -15,14 +15,15 @@ class HelloViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-	 navigationController?.navigationBar.shadowImage = UIImage()
-
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationController?.navigationBar.isTranslucent = true
+		self.navigationController?.view.backgroundColor = .clear
+		
 	}
 	
 	@IBAction func logOut(_ sender: UIButton) {
 		performSegue(withIdentifier: "logOutSegue", sender: nil)
 		UserDefaults.standard.set(false, forKey: "login")
 	}
-	
-	
 }
