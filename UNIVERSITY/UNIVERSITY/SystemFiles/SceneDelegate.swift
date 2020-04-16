@@ -34,11 +34,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 				print("ViewController not found")
 				return
 			}
-			let rootNC = UINavigationController(rootViewController: rootVC)
-			self.window?.rootViewController = rootNC
+			self.window?.rootViewController = rootVC
 		}
 		
 		self.window?.makeKeyAndVisible()
+		
 	}
 	
 	func sceneDidDisconnect(_ scene: UIScene) {

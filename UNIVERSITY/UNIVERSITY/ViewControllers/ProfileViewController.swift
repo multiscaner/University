@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
 		
 		self.icon.layer.cornerRadius = self.icon.bounds.height / 2
 		self.icon.layer.borderWidth = 2
-		self.icon.layer.borderColor = UIColor.white.cgColor
+		self.icon.layer.borderColor = UIColor.secondarySystemBackground.cgColor
 		
 		if let pers = person {
 			icon.image = UIImage(named: "icon")

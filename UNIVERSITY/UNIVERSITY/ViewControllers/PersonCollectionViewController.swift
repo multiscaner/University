@@ -37,17 +37,17 @@ extension PersonCollectionViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PersonCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PersonCollectionViewCell
 		let pers = PersonDataSource.shared.persons[indexPath.row]
 		
-		cell?.name.text = "Name: \(pers.name)"
-		cell?.userName.text = "Username: \(pers.username)"
-		cell?.companyName.text = "Company: \(pers.company.name)"
-		cell?.icon.image = UIImage(named: "icon")
-		cell?.layer.borderWidth = 2
-		cell?.layer.borderColor = UIColor.white.cgColor
+		cell.name.text = "Name: \(pers.name)"
+		cell.userName.text = "Username: \(pers.username)"
+		cell.companyName.text = "Company: \(pers.company.name)"
+		cell.icon.image = UIImage(named: "icon")
+		cell.layer.borderWidth = 2
+		cell.layer.borderColor = UIColor.white.cgColor
 		
-		return cell!
+		return cell
 	}
 }
 // MARK: UICollectionViewDelegate
