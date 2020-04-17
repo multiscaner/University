@@ -203,11 +203,17 @@
                                     <outlet property="delegate" destination="aJF-Lg-whE" id="XXp-hW-06a"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="08h-P8-Ui6">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="MyGreen"/>
                         <constraints>
                             <constraint firstItem="Wjf-HU-rOx" firstAttribute="trailing" secondItem="tMU-Q2-QUl" secondAttribute="trailing" id="Rzy-ei-hAR"/>
+                            <constraint firstItem="08h-P8-Ui6" firstAttribute="centerX" secondItem="jqg-FM-Hec" secondAttribute="centerX" id="ZcQ-xY-cWi"/>
                             <constraint firstItem="tMU-Q2-QUl" firstAttribute="leading" secondItem="Wjf-HU-rOx" secondAttribute="leading" id="lB7-8s-ylW"/>
+                            <constraint firstItem="08h-P8-Ui6" firstAttribute="centerY" secondItem="jqg-FM-Hec" secondAttribute="centerY" id="r7u-qj-TVV"/>
                             <constraint firstItem="Wjf-HU-rOx" firstAttribute="bottom" secondItem="tMU-Q2-QUl" secondAttribute="bottom" id="vPS-IP-jYv"/>
                             <constraint firstItem="tMU-Q2-QUl" firstAttribute="top" secondItem="Wjf-HU-rOx" secondAttribute="top" id="yO4-Pg-CWM"/>
                         </constraints>
@@ -215,6 +221,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="X4T-At-geS"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="08h-P8-Ui6" id="47b-rw-n6H"/>
                         <outlet property="collectionView" destination="tMU-Q2-QUl" id="MEh-f3-9ip"/>
                         <segue destination="CtL-dw-loY" kind="show" identifier="profileSegue" id="0F6-3K-d08"/>
                     </connections>

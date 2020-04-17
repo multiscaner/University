@@ -9,17 +9,17 @@
 import UIKit
 
 class PersonCollectionViewController: UIViewController {
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//start
+		self.activityIndicator.startAnimating()
 		PersonDataSource.shared.getPerson {
 			self.collectionView.reloadData()
-			//finish
+			self.activityIndicator.stopAnimating()
 		}
-		
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
