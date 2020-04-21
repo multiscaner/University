@@ -14,12 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	
 	
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		self.window = UIWindow(windowScene: windowScene)
-		//self.window =  UIWindow(frame: UIScreen.main.bounds)
 		
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		if UserDefaults.standard.bool(forKey: "login") {
@@ -37,6 +34,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			self.window?.rootViewController = rootVC
 		}
 		self.window?.makeKeyAndVisible()
+		
+		if UserDefaults.standard.bool(forKey: "mode") {
+			window?.overrideUserInterfaceStyle = .light
+		} else {
+			window?.overrideUserInterfaceStyle = .dark
+		}
 		
 	}
 	

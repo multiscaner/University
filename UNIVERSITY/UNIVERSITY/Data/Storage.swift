@@ -9,7 +9,7 @@
 import Foundation
 
 class Storage {
-	
+		
 	func saveUseData(username: String, password: String) {
 		let userPasswordDictionary = [username: password] // create dict
 
