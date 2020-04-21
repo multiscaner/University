@@ -12,6 +12,7 @@ class HelloViewController: UIViewController {
 
 	@IBOutlet weak var helloLabel: UILabel!
 	
+	@IBOutlet weak var segment: UISegmentedControl!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,17 @@ class HelloViewController: UIViewController {
 		self.navigationController?.navigationBar.shadowImage = UIImage()
 		self.navigationController?.navigationBar.isTranslucent = true
 		self.navigationController?.view.backgroundColor = .clear
-		
+	}
+	@IBAction func darkLightChange(_ sender: UISegmentedControl) {
+		switch segment.selectedSegmentIndex
+		   {
+		   case 0:
+			   view.window?.overrideUserInterfaceStyle = .light
+		   case 1:
+			   view.window?.overrideUserInterfaceStyle = .dark
+		   default:
+			   break
+		   }
 	}
 	
 	@IBAction func logOut(_ sender: UIButton) {
